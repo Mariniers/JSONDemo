@@ -45,7 +45,7 @@
         //NSDictionary *post = [status objectForKey:@"post"];
         //NSString *title = [post objectForKey:@"title"];
         //NSLog(@"%@", title);
-        NSLog(@"Test");
+        NSLog(@"Test Manu");
     }
     return YES;
 }
