@@ -42,9 +42,10 @@
     {
         // on peut recuperer les valeurs en utilisant objectForKey à partir du status qui est un NSDictionary
         // on log le tweet et le nom de l utilisateur
-        NSDictionary *post = [status objectForKey:@"post"];
-        NSString *title = [post objectForKey:@"title"];
-        NSLog(@"%@", title);
+        //NSDictionary *post = [status objectForKey:@"post"];
+        //NSString *title = [post objectForKey:@"title"];
+        //NSLog(@"%@", title);
+        NSLog(@"Test");
     }
     return YES;
 }
