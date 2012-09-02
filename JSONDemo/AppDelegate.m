@@ -10,8 +10,6 @@
 
 #import "ViewController.h"
 
-#import "SBJson.h"
-
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -24,22 +22,9 @@
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
     
-    // Construction de l'url à récupérer
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://fr.etapes.com/logo-en-tete.json"]];
+    NSLog(@"kdfsjhksdj");
     
-    // execution de la requête et récupération du JSON via un objet NSData
-    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    
-    // On récupère le JSON en NSString depuis la réponse
-    NSString *json_string = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-    
-    // on parse la reponse JSON
-    NSDictionary *status = [parser objectWithString:json_string error:nil];
-    NSDictionary *post = [status objectForKey:@"post"];
-    NSString *title = [post objectForKey:@"content"];
-    NSLog(@"%@", title);
     return YES;
 }
 
