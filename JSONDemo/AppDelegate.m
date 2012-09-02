@@ -36,12 +36,16 @@
     NSString *json_string = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     
     // on parse la reponse JSON
-    NSDictionary *status = [parser objectWithString:json_string error:nil];
-
-    NSDictionary *post = [status objectForKey:@"post"];
-    NSString *title = [post objectForKey:@"content"];
-    NSLog(@"%@", title);
+    NSArray *statuses = [parser objectWithString:json_string error:nil];
     
+    for (NSDictionary *status in statuses)
+    {
+        // on peut recuperer les valeurs en utilisant objectForKey à partir du status qui est un NSDictionary
+        // on log le tweet et le nom de l utilisateur
+        NSDictionary *post = [status objectForKey:@"post"];
+        NSString *title = [post objectForKey:@"title"];
+        NSLog(@"%@", title);
+    }
     return YES;
 }
 
