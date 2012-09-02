@@ -23,8 +23,6 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
-    NSLog(@"kdfsjhksdj");
-    
     return YES;
 }
 
