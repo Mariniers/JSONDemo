@@ -37,8 +37,15 @@
     // on parse la reponse JSON
     NSDictionary *status = [parser objectWithString:json_string error:nil];
     NSDictionary *post = [status objectForKey:@"post"];
-    NSString *title = [post objectForKey:@"content"];
-    NSLog(@"%@", title);
+    //Récupération du titre
+    NSString *title = [post objectForKey:@"title"];
+    //Récupération du contenu
+    NSString *content = [post objectForKey:@"content"];
+    
+    //On insére le NSString dans le lablel
+    labelTitle.text = title;
+    //On insére le NSString dans le lablel
+    labelContent.text = content;
 
 }
 
